@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+.round-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+}
+
+.pulse-container {
+  position: relative;
+}
+
+.pulse1,
+.pulse2,
+.pulse3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 0;
+  background: red;
+  animation: pulse 3s infinite;
+}
+
+.pulse2 {
+  animation-delay: 1s;
+}
+
+.pulse3 {
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
